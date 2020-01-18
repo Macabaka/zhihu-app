@@ -1,11 +1,11 @@
 <template>
-	<div>
-		热门页面
-	</div>
+  <div>
+	  热榜页面
+  </div>
 </template>
 
 <script>
 </script>
 
-<style>
+<style scoped="scoped">
 </style>

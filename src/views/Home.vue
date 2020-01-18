@@ -8,7 +8,6 @@
 				</div>
 				<div>
 					<router-view/>
-				
 				</div>
 
 			</div>
@@ -18,9 +17,11 @@
 				</div>
 				
 				<div class="hy-home-right-mid">
+					
 				</div>
 				
 				<div class="hy-home-right-bottom">
+					
 				</div>
 			</div>
 		</div>
@@ -60,7 +61,7 @@
 		border: 1px solid #e0e0e0;
 	}
 	.hy-home-right-mid{
-		height: 100px;
+		height: 0px;
 		width: 90%;
 		margin: 3%;
 		background-color: white;

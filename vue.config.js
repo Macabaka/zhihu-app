@@ -1,5 +1,8 @@
-module.exports={
-	devServer:{
-		port:9090
-	}
+module.exports = {
+  "devServer": {
+    "port": 9090
+  },
+  "transpileDependencies": [
+    "vuetify"
+  ]
 }

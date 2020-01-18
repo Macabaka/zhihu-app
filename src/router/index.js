@@ -9,6 +9,8 @@ import Explore from '../views/Explore.vue'
 import Special from '../views/Special.vue'
 import QuertionWaiting from '../views/QuertionWaiting.vue'
 import Login from '../views/Login.vue'
+import Discuss from '../views/Discuss.vue'
+import SpecialNav from '../views/SpecialNav.vue'
 
 Vue.use(VueRouter)
 
@@ -59,6 +61,14 @@ const routes = [{
 	{
 		path:'/login',
 		component:Login
+	},
+	{
+		path:'/specialnav',
+		component:SpecialNav,
+		children:[{
+			path:'discuss/all',
+			component:Discuss
+		}]
 	}
 
 ]
