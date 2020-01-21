@@ -137,7 +137,7 @@
 
 	.hy-queWaiting-container-right-top {
 		height: 260px;
-		width: 85%;
+		width: 84%;
 		background-color: white;
 		margin: 3%;
 		border: 1px solid #e0e0e0;
@@ -145,7 +145,7 @@
 
 	.hy-queWaiting-container-right-mid {
 		height: 70px;
-		width: 85%;
+		width: 84%;
 		margin: 3%;
 		background-color: white;
 		border: 1px solid #e0e0e0;
@@ -153,7 +153,7 @@
 
 	.hy-queWaiting-container-right-bottom {
 		height: 260px;
-		width: 85%;
+		width: 84%;
 		background-color: white;
 		margin: 3%;
 		border: 1px solid #e0e0e0;

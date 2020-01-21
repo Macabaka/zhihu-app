@@ -16,7 +16,7 @@
 							</v-list-item>
 
 
-							<v-btn class="ma-2 blue--text" color="#d9edff">赞同2.3K</v-btn>
+							<v-btn class="ma-2 blue--text" depressed color="#d9edff">赞同2.3K</v-btn>
 							<!-- <v-btn class="mx-0"   small color="primary">
 							      <v-icon dark>mdi-minus</v-icon>
 							    </v-btn> -->

@@ -71,7 +71,7 @@
 	.hy-special-content-row {
 		height: 200px;
 		width: 98%;
-		margin: 1%;
+		margin: 1% 0 0 0;
 		padding: 1%;
 		display: flex;
 		/* border: 1px solid #e0e0e0; */

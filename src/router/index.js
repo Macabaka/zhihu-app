@@ -11,7 +11,7 @@ import QuertionWaiting from '../views/QuertionWaiting.vue'
 import Login from '../views/Login.vue'
 import Discuss from '../views/Discuss.vue'
 import SpecialNav from '../views/SpecialNav.vue'
-
+import Favorite from '../views/Favorite.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -54,6 +54,10 @@ const routes = [{
 			{
 				path:'question/waiting',
 				component:QuertionWaiting
+			},
+			{
+				path:'favorite/all',
+				component:Favorite
 			}
 
 		]
