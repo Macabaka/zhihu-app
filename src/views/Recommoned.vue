@@ -111,6 +111,6 @@
 	.hy-recommoned-cotainer-row {
 		width: 99%;
 		margin-left: 1%;
-		border-bottom: 1px solid #e0e0e0;
+		border-bottom: 1px solid #eeeeee;
 	}
 </style>

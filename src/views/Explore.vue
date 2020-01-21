@@ -10,7 +10,7 @@
 		</div>
 		<div class="hy-explore-container">
 
-			<v-card class="mx-auto hy-explore-card" v-for="(section,index) in recentSpecial" :key="index">
+			<v-card class="mx-auto hy-explore-card" v-for="(section,index) in recentSpecial" :key="index" style="margin-bottom: 5%;">
 				<v-img class="white--text align-end" height="200px" :src="section.banner">
 				</v-img>
 				<div class="hy-explore-card-content">
@@ -46,7 +46,7 @@
 		</div>
 
 		<div class="hy-explore-container">
-			<v-card class="mx-auto hy-explore-card" v-for="(discuss,index) in roundTable" :key="index">
+			<v-card class="mx-auto hy-explore-card" v-for="(discuss,index) in roundTable" :key="index" style="margin-bottom: 5%;">
 				<v-img class="white--text align-end" height="200px" :src="discuss.banner">
 
 					<v-card-title class="font-weight-bold white--text">{{discuss.name}}</v-card-title>
@@ -80,11 +80,11 @@
 
 
 		<div class="hy-explore-container">
-			<v-card class="mx-auto hy-explore-card" v-for="(favorite,index) in recentfavorite" :key="index">
+			<v-card class="mx-auto hy-explore-card" v-for="(favorite,index) in recentfavorite" :key="index" style="margin-bottom: 5%;">
 				<div class="hy-explore-card-faviorite-top">
 					<div style="display: flex;">
 						<p class="font-weight-black" style="font-size: 22px;">{{favorite.title}}</p>
-						<v-btn color="blue  lighten-5"  depressed style="position: absolute;right: 5%;">
+						<v-btn color="blue  lighten-5" depressed style="position: absolute;right: 5%;">
 							<span class="font-weight-bold blue--text">关注专题</span>
 						</v-btn>
 					</div>
@@ -93,11 +93,11 @@
 							<v-img :src="favorite.creatorAvatar">
 							</v-img>
 						</v-avatar>
-						 <p class="text-justify" style="font-size: 16px;margin: 1%;" >
+						<p class="text-justify" style="font-size: 16px;margin: 1%;">
 							{{favorite.creatorName}}
-						 </p >
+						</p>
 						<span class="font-weight-light grey--text" style="font-size: 16px;margin-top: 1%;">创建</span>
-						 <span class="font-weight-light grey--text" style="font-size: 16px;margin: 1%;">{{favorite.follows}}人关注</span>
+						<span class="font-weight-light grey--text" style="font-size: 16px;margin: 1%;">{{favorite.follows}}人关注</span>
 					</div>
 				</div>
 				<div class="hy-explore-card-faviorite-mid">
@@ -134,6 +134,44 @@
 			</svg>
 			<h2>专栏</h2>
 		</div>
+
+		<div class="hy-explore-container">
+			<v-card class="mx-auto" height="335" width="23%" style="display: flex;flex-direction: column;align-items: center;padding: 1% 0 1% 0;margin-bottom: 5%;"
+			 v-for="(columns,index) in recentColumns" :key="index">
+				<v-card-text style="display: flex;flex-direction: column;align-items: center;">
+					<a :href="columns.url">
+						<v-avatar size="88">
+							<img :src="columns.imageUrl">
+						</v-avatar>
+					</a>
+
+					<a :href="columns.url">
+						<p class="font-weight-black" style="font-size: 18px;color: black;">{{columns.title.substring(0,10)}}</p>
+					</a>
+
+					<p>{{columns.followers}}关注·{{columns.articlesCount}}文章</p>
+					<div class="text--primary">
+						{{columns.description.substring(0,20)}}
+					</div>
+				</v-card-text>
+				<br>
+				<a :href="columns.url">
+					<v-card-actions>
+						<v-btn class="font-weight-black blue--text" depressed color="#d9edff">进入专栏</v-btn>
+					</v-card-actions>
+				</a>
+
+
+			</v-card>
+			<div class="text-center hy-explore-bottom">
+				<router-link to="/columnnav/column/all">
+					<v-btn rounded color="font-weight-bold white grey--text ">查看更多专栏</v-btn>
+				</router-link>
+			</div>
+		</div>
+		<div class="text-center hy-explore-bottom" style="margin:5% 0 15% 0;">
+			 <p class="font-weight-regular" style="color: #9e9e9e;font-size: 14px;">Jack·知乎指南·知乎协议·应用·工作·联系我们@2020知乎</p>
+		</div>
 	</div>
 
 </template>
@@ -144,7 +182,8 @@
 			return {
 				recentSpecial: [],
 				roundTable: [],
-				recentfavorite:[]
+				recentfavorite: [],
+				recentColumns: []
 			}
 
 		},
@@ -170,13 +209,22 @@
 					// console.log(res.data.data)
 				})
 			},
-			getFavorite(){
+			getFavorite() {
 				this.axios({
-					method:'get',
-					url:this.GLOBAL.baseUrl+'/favorite'
-				}).then(res=>{
-					console.log(res.data.data)
-					this.recentfavorite=res.data.data
+					method: 'get',
+					url: this.GLOBAL.baseUrl + '/favorite'
+				}).then(res => {
+					// console.log(res.data.data)
+					this.recentfavorite = res.data.data
+				})
+			},
+			getColumns() {
+				this.axios({
+					method: 'get',
+					url: this.GLOBAL.baseUrl + '/columns'
+				}).then(res => {
+					console.log(res.data.data);
+					this.recentColumns = res.data.data;
 				})
 			}
 		},
@@ -184,6 +232,7 @@
 			this.getSpeciacl()
 			this.getRoundTable()
 			this.getFavorite()
+			this.getColumns()
 		}
 	}
 </script>
@@ -191,10 +240,9 @@
 <style scoped="scoped">
 	.hy-explore-container {
 		width: 100%;
-		height: 1000px;
+		/* height: 1000px; */
 		display: flex;
 		flex-wrap: wrap;
-		/* background-color: red; */
 	}
 
 	.hy-explore-content {
@@ -210,10 +258,10 @@
 	.img {
 		width: 100%;
 	}
-
 	.hy-explore-bottom {
-		height: 60px;
+		height: 10%;
 		width: 100%;
+		/* background-color: red; */
 	}
 
 	.hy-explore-bottom-pos {
@@ -254,7 +302,7 @@
 		margin: 3% auto 0 auto;
 		border-bottom: 1px solid grey;
 		padding: 3%;
-		
+
 
 	}
 
@@ -272,8 +320,9 @@
 		/* background-color: green; */
 		margin: 0 auto 0 auto;
 	}
-	.hy-explore-card-faviorite-mid-row{
-		width:98%;
+
+	.hy-explore-card-faviorite-mid-row {
+		width: 98%;
 		height: 45%;
 		/* background-color: red; */
 		margin: 2%;

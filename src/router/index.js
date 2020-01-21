@@ -12,6 +12,8 @@ import Login from '../views/Login.vue'
 import Discuss from '../views/Discuss.vue'
 import SpecialNav from '../views/SpecialNav.vue'
 import Favorite from '../views/Favorite.vue'
+import ColumnNav from '../views/ColumnNav.vue'
+import Column from '../views/Column.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -73,6 +75,16 @@ const routes = [{
 			path:'discuss/all',
 			component:Discuss
 		}]
+	},
+	{
+		path:'/columnnav',
+		component:ColumnNav,
+		children:[
+			{
+				path:'column/all',
+				component:Column
+			}
+		]
 	}
 
 ]
