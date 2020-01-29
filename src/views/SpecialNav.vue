@@ -1,8 +1,9 @@
+<!-- 所有圆桌页面的导航栏 -->
 <template>
 	<div>
 		<div>
-			<div class="hy-nav-container">
-			<div class="hy-nav-search">
+			<div class="hy-nav-container fill-white d-flex flex-row border-bottom pos-fix">
+			<div class="hy-nav-search pt-1">
 				          <v-text-field
 				            label="搜索你感兴趣的内容..."
 				            single-line
@@ -10,32 +11,28 @@
 							dense
 				          ></v-text-field>
 			</div>
-				<router-link to="/home" class="hy-nav-a">
+				<router-link to="/home" class="hy-nav-a m-4 d-flex align-items-center ">
 							首页
 				</router-link>
-				<router-link to="/explore"  class="hy-nav-a">
+				<router-link to="/explore"  class="hy-nav-a m-4 d-flex align-items-center ">
 							发现
 				</router-link>
-				<router-link to="/question/waiting"  class="hy-nav-a">
+				<router-link to="/question/waiting"  class="hy-nav-a m-4 d-flex align-items-center ">
 							消息
 				</router-link>
-				 <div class="my-1" style="position: relative;left: 15%;">
+				 <div class="my-1 pos-rel" style="left: 15%;">
 				        <v-btn depressed class="blue  lighten-2">提问</v-btn>
 				 </div>
 			</div>
 		</div>
 		
 		
-		<div class="hy-nav-most">
-			<div style="width:8%;">
-				
-			</div>
-			<div style="width: 84%;">
+		<div class="hy-nav-most d-flex fill-white pos-abs">
+			<div class="col-1"></div>
+			<div class="col-10">
 				<router-view/>
 			</div>
-			<div style="width: 8%;">
-			
-			</div>
+			<div class="col-1"></div>
 		</div>
 	</div>
 
@@ -48,31 +45,18 @@
 	.hy-nav-container{
 		height: 45px;
 		width: 100%;
-		background-color: #ffffff;
-		display: flex;
-		flex-direction: row;
 		padding-left: 17%;
-		border-bottom: 1px solid #efefef;
 		background-color: #0664c3;
-		position: fixed;
 		z-index: 2;
 	}
 	.hy-nav-a{
-		margin: 2%;
-		display: flex;
-		align-items: center;
 		color:white;
-		font-size: 14px;
 	}
 	.hy-nav-most{
-		display: flex;
-		background-color:#f6f6f6;
-		position: absolute;
 		z-index: 1;
 	}
 	.hy-nav-search{
 		width: 30%;
-		padding-top: 3px;
 	}
 </style>
 

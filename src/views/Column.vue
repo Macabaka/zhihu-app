@@ -1,15 +1,16 @@
+<!-- 所有专栏页面 -->
 <template>
-	<div class="hy-column-container">
-		<div class="hy-column-container-top">
-			<div class="hy-column-container-top-content">
+	<div>
+		<div class="hy-column-container-top pos-rel">
+			<div class="hy-column-container-top-content d-flex flex-column pos-abs">
 				<v-btn class="ma-1" block  outlined color="blue">
 					开始写文章
 				</v-btn>
-				<span class="font-weight-regular" style="font-size: 14px;margin-left: 17%;">申请开通专栏</span>
+				<span class="font-weight-regular" style="margin-left: 17%;">申请开通专栏</span>
 			</div>
 		</div>
-		<div class="hy-column-container-mid">
-			<div class="hy-column-container-tip">
+		<div>
+			<div class="hy-column-container-tip d-flex justify-content-center">
 				<p class="font-weight-bold">专栏·发现</p>
 			</div>
 			<div style="display: flex;">
@@ -40,7 +41,7 @@
 					</v-card>
 				</div>
 			</div>
-			<div class="hy-column-container-mid-btn">
+			<div class="hy-column-container-mid-btn d-flex justify-content-center">
 				<v-btn class="ma-1"   outlined color="blue" @click="getBatch()">
 					换一批
 				</v-btn>
@@ -85,8 +86,7 @@
 			}
 			
 		},
-		created() {
-			
+		created() {	
 			this.getColumns()
 		}
 	}
@@ -94,46 +94,20 @@
 
 <style>
 	.hy-column-container-top{
-		width: 100%;
 		height: 470px;
-		/* background-color: red; */
 		background-image: url(https://static.zhihu.com/heifetz/assets/patterns.c72a480c.png);
 		background-size: cover;
 		background-repeat: no-repeat;
-		position: relative;
-		/* background-color: red; */
-	}
-	.hy-column-container{
-		width: 100%;
-		height: 100%;
 	}
 	.hy-column-container-top-content{
-		display: flex;
-		flex-direction: column;
-		/* justify-content: center; */
-		position: absolute;
 		bottom: 0;
 		right: 44%;
 	}
-	.hy-column-container-mid{
-		width: 100%;
-		/* height: 500px; */
-		/* background-color: #0084FF; */
-		
-	}
 	.hy-column-container-tip{
-		width: 100%;
 		margin: 5% 0 2% 0;
-		/* background-color: red; */
-		display: flex;
-		justify-content: center;
 	}
 	.hy-column-container-mid-btn{
-		width: 100%;
 		height: 30px;
-		display: flex;
-		justify-content: center;
 		margin: 2% 0 10% 0;
-		/* background-color: red; */
 	}
 </style>

@@ -1,8 +1,7 @@
-
+<!-- 所有圆桌页面 -->
 <template>
-
-	<div class="hy-discuss-container">
-		<div class="hy-discuss-left ba-col-8">
+	<div class="hy-discuss-container d-flex pos-rel">
+		<div class="hy-discuss-left ba-col-8 d-flex flex-wrap pos-rel">
 			<v-card class="mx-auto" max-width="220" max-height="255" style="margin: 2%;" v-for="(discuss,index) in allDiscuss" :key="index">
 				<v-img class="white--text align-end" height="200px" :src="discuss.banner">
 					<v-card-title>Top 10 Australian beaches</v-card-title>
@@ -113,21 +112,9 @@
 
 <style scoped="scoped">
 	.hy-discuss-container {
-		display: flex;
-		width: 100%;
-		position: relative;
 		top: 50px;
 	}
-
-	.hy-discuss-left {
-		display: flex;
-		flex-wrap: wrap;
-		position: relative;
-
-	}
-
 	.hy-discuss-right {
 		width: 30%;
-
 	}
 </style>
