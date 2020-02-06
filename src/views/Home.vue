@@ -1,18 +1,24 @@
 <!-- 首页框架及其右侧列表页 -->
 <template>
 	<div class="d-flex">
-		<div class="col-8 ">
-			<div class="hy-home-left-top m-2 border-bottom p-3 fill-white">
-				<router-link to="/home/recommoned" class="hy-home-left-a ml-3">推荐</router-link>
-				<router-link to="/home/follow" class="hy-home-left-a ml-3">关注</router-link>
-				<router-link to="/home/hot"  class="hy-home-left-a ml-3">热榜</router-link>
+		<div class="col-8">
+			<div class="ml-1">
+				<img src="https://static.zhihu.com/heifetz/assets/NewYear2020Banner.e5ccc19d.png" style="border-radius: 1%;">
 			</div>
+			
+			<div class="hy-home-left-top mt-1 ml-1 border-bottom p-3 fill-white">
+				<router-link to="/home/recommoned" class="hy-home-left-a ml-2 mr-5">推荐</router-link>
+				<router-link to="/home/follow" class="hy-home-left-a ml-4 mr-5">关注</router-link>
+				<router-link to="/home/hot" class="hy-home-left-a ml-4 mr-5">热榜</router-link>
+			</div>
+			<!-- 记住滚动条的位置 -->
+			<keep-alive><router-view /></keep-alive>
 			<div>
 				<router-view />
 			</div>
 		</div>
-		<div class="col-4 ">
-			<div class="hy-home-right-top border-bottom fill-white d-flex m-2 flex-wrap">
+		<div class="col-4">
+			<div class="hy-home-right-top border-bottom fill-white d-flex  flex-wrap">
 				<div class="hy-home-right-box d-flex justify-content-center align-items-center flex-column">
 					<svg class="Zi Zi--Paper GlobalWrite-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="24"
 					 height="24">
@@ -57,8 +63,7 @@
 					<span>草稿箱</span>
 				</div>
 			</div>
-
-			<div class="hy-home-right-mid m-2 fill-white border-bottom d-flex justify-content-between tx-center">
+			<div class="hy-home-right-mid mt-1 fill-white border-bottom d-flex justify-content-between tx-center">
 				<div style="width: 45%;display: flex;justify-content: center;">
 					<svg class="Zi Zi--Creator CreatorEntrance-creator" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="24"
 					 height="24">
@@ -67,11 +72,13 @@
 					</svg>
 					<span style="margin: 1%;">创作者中心</span>
 				</div>
-				<a href="" class="font-weight-light">去开通</a>
+				<div class="d-flex">
+					<a  class="subtitle-2 mb-1" >去开通</a>
+					<svg class="Zi Zi--ArrowRight CreatorEntrance-arrow CreatorEntrance-arrow--smallIcon" fill="currentColor" viewBox="0 0 24 26" width="24" height="24"><path d="M9.218 16.78a.737.737 0 0 0 1.052 0l4.512-4.249a.758.758 0 0 0 0-1.063L10.27 7.22a.737.737 0 0 0-1.052 0 .759.759 0 0 0-.001 1.063L13 12l-3.782 3.716a.758.758 0 0 0 0 1.063z" fill-rule="evenodd"></path></svg>
+				</div>
 
 			</div>
-
-			<div class="hy-home-right-bottom fill-white m-2 border-bottom d-flex flex-wrap">
+			<div class="hy-home-right-bottom fill-white mt-1 border-bottom d-flex flex-wrap">
 				<div class="hy-home-right-box d-flex justify-content-center align-items-center flex-column">
 					<svg class="Zi Zi--Live" fill="currentColor" color="#ffcf00" viewBox="0 0 24 24" width="24" height="24">
 						<path d="M13.693 10.354l1.634-7.542c.195-.901-.16-1.083-.798-.39l-9.18 9.97c-.638.693-.377 1.254.582 1.254h5.376l-1.634 7.542c-.195.901.16 1.083.798.39l9.18-9.97c.638-.693.377-1.254-.582-1.254h-5.376z"></path>
@@ -116,71 +123,206 @@
 				</div>
 
 			</div>
-			<div class="hy-home-right-last fill-white m-2 border-bottom d-flex flex-column align-items-center">
+			<div class="hy-home-right-last fill-white mt-1 border-bottom d-flex flex-column align-items-center">
 				<div class="hy-home-right-last-row d-flex align-items-center">
-					<svg class="Zi Zi--Star GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18" height="18"><path d="M5.515 19.64l.918-5.355-3.89-3.792c-.926-.902-.639-1.784.64-1.97L8.56 7.74l2.404-4.871c.572-1.16 1.5-1.16 2.072 0L15.44 7.74l5.377.782c1.28.186 1.566 1.068.64 1.97l-3.89 3.793.918 5.354c.219 1.274-.532 1.82-1.676 1.218L12 18.33l-4.808 2.528c-1.145.602-1.896.056-1.677-1.218z" fill-rule="evenodd"></path></svg>
+					<svg class="Zi Zi--Star GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18"
+					 height="18">
+						<path d="M5.515 19.64l.918-5.355-3.89-3.792c-.926-.902-.639-1.784.64-1.97L8.56 7.74l2.404-4.871c.572-1.16 1.5-1.16 2.072 0L15.44 7.74l5.377.782c1.28.186 1.566 1.068.64 1.97l-3.89 3.793.918 5.354c.219 1.274-.532 1.82-1.676 1.218L12 18.33l-4.808 2.528c-1.145.602-1.896.056-1.677-1.218z"
+						 fill-rule="evenodd"></path>
+					</svg>
 					<span class="font-weight-light">我的收藏</span>
 				</div>
-				
+
 				<div class="hy-home-right-last-row d-flex align-items-center">
-					<svg class="Zi Zi--HelpBubble GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18" height="18"><path d="M5.74 4h12.52c.961 0 1.74.775 1.74 1.73V16.27c0 .955-.779 1.73-1.74 1.73h-3.825l-1.658 2.044a1 1 0 0 1-1.554 0l-1.658-2.044H5.74C4.78 18 4 17.224 4 16.27V5.73C4 4.775 4.778 4 5.74 4zM12 16a.976.976 0 0 0 .705-.287.951.951 0 0 0 .295-.712.954.954 0 0 0-.295-.714A.976.976 0 0 0 12 14a.962.962 0 0 0-.705.295A.961.961 0 0 0 11 15c0 .284.098.522.295.713A.975.975 0 0 0 12 16zm1.278-4.924a36.81 36.81 0 0 0 1.023-.975c.19-.193.354-.422.492-.688.138-.266.207-.575.207-.928 0-.448-.12-.864-.363-1.246a2.517 2.517 0 0 0-1.029-.906C13.164 6.111 12.652 6 12.072 6c-.624 0-1.17.133-1.638.399-.468.265-.824.6-1.068 1.005-.244.405-.366.804-.366 1.2 0 .19.077.368.231.531a.747.747 0 0 0 .567.246c.38 0 .638-.234.774-.703.144-.449.32-.788.528-1.019.208-.23.532-.345.972-.345.376 0 .683.114.921.342.238.229.357.51.357.841 0 .17-.039.328-.117.473a1.782 1.782 0 0 1-.288.396c-.114.118-.3.294-.555.526a9.71 9.71 0 0 0-.696.688c-.172.194-.31.418-.414.673a2.391 2.391 0 0 0-.156.906c0 .278.071.488.213.63a.716.716 0 0 0 .525.211c.4 0 .638-.216.714-.648.044-.203.077-.345.099-.426.022-.081.053-.162.093-.243.04-.081.101-.17.183-.268.082-.098.191-.21.327-.34z" fill-rule="evenodd"></path></svg>
+					<svg class="Zi Zi--HelpBubble GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18"
+					 height="18">
+						<path d="M5.74 4h12.52c.961 0 1.74.775 1.74 1.73V16.27c0 .955-.779 1.73-1.74 1.73h-3.825l-1.658 2.044a1 1 0 0 1-1.554 0l-1.658-2.044H5.74C4.78 18 4 17.224 4 16.27V5.73C4 4.775 4.778 4 5.74 4zM12 16a.976.976 0 0 0 .705-.287.951.951 0 0 0 .295-.712.954.954 0 0 0-.295-.714A.976.976 0 0 0 12 14a.962.962 0 0 0-.705.295A.961.961 0 0 0 11 15c0 .284.098.522.295.713A.975.975 0 0 0 12 16zm1.278-4.924a36.81 36.81 0 0 0 1.023-.975c.19-.193.354-.422.492-.688.138-.266.207-.575.207-.928 0-.448-.12-.864-.363-1.246a2.517 2.517 0 0 0-1.029-.906C13.164 6.111 12.652 6 12.072 6c-.624 0-1.17.133-1.638.399-.468.265-.824.6-1.068 1.005-.244.405-.366.804-.366 1.2 0 .19.077.368.231.531a.747.747 0 0 0 .567.246c.38 0 .638-.234.774-.703.144-.449.32-.788.528-1.019.208-.23.532-.345.972-.345.376 0 .683.114.921.342.238.229.357.51.357.841 0 .17-.039.328-.117.473a1.782 1.782 0 0 1-.288.396c-.114.118-.3.294-.555.526a9.71 9.71 0 0 0-.696.688c-.172.194-.31.418-.414.673a2.391 2.391 0 0 0-.156.906c0 .278.071.488.213.63a.716.716 0 0 0 .525.211c.4 0 .638-.216.714-.648.044-.203.077-.345.099-.426.022-.081.053-.162.093-.243.04-.081.101-.17.183-.268.082-.098.191-.21.327-.34z"
+						 fill-rule="evenodd"></path>
+					</svg>
 					<span class="font-weight-light">我关注的问题</span>
 				</div>
 				<div class="hy-home-right-last-row d-flex align-items-center">
-					<svg class="Zi Zi--Invite GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18" height="18"><path d="M4 10V8a1 1 0 1 1 2 0v2h2a1 1 0 0 1 0 2H6v2a1 1 0 0 1-2 0v-2H2a1 1 0 0 1 0-2h2zm10.455 2c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm-7 6c0-2.66 4.845-4 7.272-4C17.155 14 22 15.34 22 18v1.375c0 .345-.28.625-.625.625H8.08a.625.625 0 0 1-.625-.625V18z" fill-rule="evenodd"></path></svg>
+					<svg class="Zi Zi--Invite GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18"
+					 height="18">
+						<path d="M4 10V8a1 1 0 1 1 2 0v2h2a1 1 0 0 1 0 2H6v2a1 1 0 0 1-2 0v-2H2a1 1 0 0 1 0-2h2zm10.455 2c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm-7 6c0-2.66 4.845-4 7.272-4C17.155 14 22 15.34 22 18v1.375c0 .345-.28.625-.625.625H8.08a.625.625 0 0 1-.625-.625V18z"
+						 fill-rule="evenodd"></path>
+					</svg>
 					<span class="font-weight-light">我的邀请</span>
 				</div>
-				
+
 				<div class="hy-home-right-last-row d-flex align-items-center">
-					<svg class="Zi Zi--Community GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18" height="18"><path d="M5.74 4h12.52c.961 0 1.74.775 1.74 1.73V16.27c0 .955-.779 1.73-1.74 1.73h-3.825l-1.658 2.044a1 1 0 0 1-1.554 0l-1.658-2.044H5.74C4.78 18 4 17.224 4 16.27V5.73C4 4.775 4.778 4 5.74 4zM7 8.98c0 .554.449.996 1.003.996h4.994A.992.992 0 0 0 14 8.981a.997.997 0 0 0-1.003-.995H8.003A.992.992 0 0 0 7 8.98zm0 4c0 .554.446.996.995.996h8.01a.993.993 0 0 0 .995-.995.993.993 0 0 0-.995-.995h-8.01A.993.993 0 0 0 7 12.98z" fill-rule="evenodd"></path></svg>
+					<svg class="Zi Zi--Community GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18"
+					 height="18">
+						<path d="M5.74 4h12.52c.961 0 1.74.775 1.74 1.73V16.27c0 .955-.779 1.73-1.74 1.73h-3.825l-1.658 2.044a1 1 0 0 1-1.554 0l-1.658-2.044H5.74C4.78 18 4 17.224 4 16.27V5.73C4 4.775 4.778 4 5.74 4zM7 8.98c0 .554.449.996 1.003.996h4.994A.992.992 0 0 0 14 8.981a.997.997 0 0 0-1.003-.995H8.003A.992.992 0 0 0 7 8.98zm0 4c0 .554.446.996.995.996h8.01a.993.993 0 0 0 .995-.995.993.993 0 0 0-.995-.995h-8.01A.993.993 0 0 0 7 12.98z"
+						 fill-rule="evenodd"></path>
+					</svg>
 					<span class="font-weight-light">站务中心</span>
 				</div>
-				
+
 				<div class="hy-home-right-last-row d-flex align-items-center">
-					<svg class="Zi Zi--Copyright GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18" height="18"><path d="M16.517 15.815a5.871 5.871 0 0 1-4.481 2.078 5.865 5.865 0 0 1-5.859-5.857 5.865 5.865 0 0 1 5.859-5.859c1.63 0 3.204.7 4.319 1.919.085.093.24.432.209.797a1.086 1.086 0 0 1-.436.779c-.248.193-.516.29-.797.29-.402 0-.7-.198-.814-.314A3.473 3.473 0 0 0 12 8.575a3.464 3.464 0 0 0-3.46 3.461 3.464 3.464 0 0 0 3.46 3.46 3.63 3.63 0 0 0 2.654-1.181c.136-.152.458-.306.806-.306.274 0 .542.095.773.274.35.269.45.588.473.809.032.308-.072.585-.188.723m4.686-7.699C20.67 6.883 19.96 5.82 19.07 4.929c-.891-.89-1.954-1.601-3.188-2.133A9.728 9.728 0 0 0 12 2a9.733 9.733 0 0 0-3.883.796c-1.234.532-2.297 1.243-3.186 2.133-.891.891-1.602 1.954-2.134 3.187A9.713 9.713 0 0 0 2 12a9.752 9.752 0 0 0 .797 3.883c.531 1.233 1.242 2.296 2.134 3.186.89.891 1.953 1.602 3.186 2.134A9.725 9.725 0 0 0 12 22a9.72 9.72 0 0 0 3.883-.797c1.233-.532 2.296-1.243 3.188-2.134.89-.89 1.601-1.953 2.132-3.186A9.73 9.73 0 0 0 22 12a9.69 9.69 0 0 0-.797-3.884" fill-rule="evenodd"></path></svg>
+					<svg class="Zi Zi--Copyright GlobalSideBar-navIcon" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="18"
+					 height="18">
+						<path d="M16.517 15.815a5.871 5.871 0 0 1-4.481 2.078 5.865 5.865 0 0 1-5.859-5.857 5.865 5.865 0 0 1 5.859-5.859c1.63 0 3.204.7 4.319 1.919.085.093.24.432.209.797a1.086 1.086 0 0 1-.436.779c-.248.193-.516.29-.797.29-.402 0-.7-.198-.814-.314A3.473 3.473 0 0 0 12 8.575a3.464 3.464 0 0 0-3.46 3.461 3.464 3.464 0 0 0 3.46 3.46 3.63 3.63 0 0 0 2.654-1.181c.136-.152.458-.306.806-.306.274 0 .542.095.773.274.35.269.45.588.473.809.032.308-.072.585-.188.723m4.686-7.699C20.67 6.883 19.96 5.82 19.07 4.929c-.891-.89-1.954-1.601-3.188-2.133A9.728 9.728 0 0 0 12 2a9.733 9.733 0 0 0-3.883.796c-1.234.532-2.297 1.243-3.186 2.133-.891.891-1.602 1.954-2.134 3.187A9.713 9.713 0 0 0 2 12a9.752 9.752 0 0 0 .797 3.883c.531 1.233 1.242 2.296 2.134 3.186.89.891 1.953 1.602 3.186 2.134A9.725 9.725 0 0 0 12 22a9.72 9.72 0 0 0 3.883-.797c1.233-.532 2.296-1.243 3.188-2.134.89-.89 1.601-1.953 2.132-3.186A9.73 9.73 0 0 0 22 12a9.69 9.69 0 0 0-.797-3.884"
+						 fill-rule="evenodd"></path>
+					</svg>
 					<span class="font-weight-light">版权服务中心</span>
 				</div>
 			</div>
+			<div class="hy-home-right-lastTips pos-sti">
+				<span class="hy-home-right-text">刘看山 · 知乎指南 · 知乎协议 · 知乎隐私保护协议</span>
+				<br>
+				<span class="hy-home-right-text">应用·工作·申请开通知乎机构号</span>
+				<br>
+				<span class="hy-home-right-text">侵权举报·网上有害信息举报专区</span>
+				<br>
+				<span class="hy-home-right-text">京ICP证110745号</span>
+				<br>
+				<span class="hy-home-right-text">京ICP备13052560号-1</span>
+				<br>
+				<span class="hy-home-right-text">
+					
+						<img src="https://pic3.zhimg.com/80/v2-d0289dc0a46fc5b15b3363ffa78cf6c7.png"  style="height: 18px;width: 18px;">
+					
+					京公网安备11010802010035号
+					</span>
+				<br>
+				<span class="hy-home-right-text">(京) -非经营性-2017-0067</span>
+				<br>
+				<span class="hy-home-right-text">违法和不良信息举报：010-82716601</span>
+				<br>
+				<span class="hy-home-right-text">儿童色情信息举报专区</span>
+				<br>
+				<span class="hy-home-right-text">证照中心</span>
+				<br>
+				<span class="hy-home-right-text">联系我们@2020知乎</span>
+			</div>
 		</div>
+		
+		<div class="hy-main-toTop pos-fix">
+			<div class="my-2">
+				<v-tooltip left>
+					<template v-slot:activator="{ on }">
+						<v-btn color="#ffffff" fab small tile style="border-radius:12%;" v-on="on">
+							<svg class="Zi Zi--Feedback" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+								<path d="M19.99 6.99L18 5s-1-1-2-1H8C7 4 6 5 6 5L4 7S3 8 3 9v9s0 2 2.002 2H19c2 0 2-2 2-2V9c0-1-1.01-2.01-1.01-2.01zM16.5 5.5L19 8H5l2.5-2.5h9zm-2 5.5s.5 0 .5.5-.5.5-.5.5h-5s-.5 0-.5-.5.5-.5.5-.5h5z"></path>
+							</svg>
+						</v-btn>
+					</template>
+					<span style="font-size: 12px;">建议反馈</span>
+				</v-tooltip>
+			</div>
+		
+			<div class="my-2" v-show="toTop">
+				<v-tooltip left>
+					<template v-slot:activator="{ on }">
+						<v-btn color="#ffffff" fab small tile style="border-radius:12%;" v-on="on" @click="goTop()">
+							<svg class="Zi Zi--BackToTop" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+								<path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path>
+							</svg>
+						</v-btn>
+					</template>
+					<span style="font-size: 12px;">回到顶部</span>
+				</v-tooltip>
+			</div>
+		
+		</div>
+		
 	</div>
 </template>
 
 <script>
+	export default{
+		data(){
+			return{
+				toTop: false
+			}
+		},
+		mounted() {
+			window.addEventListener('scroll',this.scrollToTop);
+		},
+		methods:{
+			scrollToTop(){
+				let scrollTop = window.pageYOffset || document.documentElement.scrollTop ||document.scrollTop;
+				this.scrollTop = scrollTop;
+				if(scrollTop >300){
+					this.toTop = true;
+				}else{
+					this.toTop = false;					
+				}
+			},
+			// 通过计时器实现返回顶层功能
+			goTop(){
+				let timer = setInterval(()=>{
+					let speed =Math.floor(-this.scrollTop /5);
+					document.documentElement.scrollTop = document.body.scrollTop =this.scrollTop+speed;
+					if(document.documentElement.scrollTop < 10){
+						clearInterval(timer);
+					}
+				},16)
+			}
+		}
+		
+	}
 </script>
 
 <style scoped="scoped">
 	.hy-home-left-top {
-		width: 99%;
-		height: 65px;
+		width: 100%;
+		height: 60px;
 	}
+
 	.hy-home-left-a {
-		font-size: 18px;
+		font-size: 16px;
+		color: black;
 	}
+	.router-link-active{
+		color: #1f8eff;
+	}
+
 	.hy-home-right-top {
 		height: 195px;
-		width: 84%;
+		width: 90%;
 	}
+
 	.hy-home-right-mid {
 		height: 55px;
-		width: 84%;
+		width: 90%;
 		padding: 4% 5% 0 5%;
 	}
+
 	.hy-home-right-bottom {
 		height: 180px;
-		width: 84%;
+		width: 90%;
 	}
+
 	.hy-home-right-box {
 		width: 33.33%;
 		height: 50%;
 	}
-	.hy-home-right-last{
+
+	.hy-home-right-last {
 		height: 220px;
-		width: 84%;
-	}
-	.hy-home-right-last-row{
 		width: 90%;
-		height: 20%;	
-		color:#8590a6;
+	}
+
+	.hy-home-right-last-row {
+		width: 90%;
+		height: 20%;
+		color: #8590a6;
 		font-size: 14px;
+	}
+
+	.hy-home-right-lastTips {
+		width: 90%;
+		top: 52px;
+	}
+
+	.hy-home-right-text {
+		line-height: 32px;
+		color: #9099b0;
+	}
+	.hy-main-toTop {
+		bottom: 20px;
+		right: 20px;
 	}
 </style>

@@ -14,6 +14,7 @@ import SpecialNav from '../views/SpecialNav.vue'
 import Favorite from '../views/Favorite.vue'
 import ColumnNav from '../views/ColumnNav.vue'
 import Column from '../views/Column.vue'
+import Test from '../views/Test.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -85,6 +86,10 @@ const routes = [{
 				component:Column
 			}
 		]
+	},
+	{
+		path:'/test',
+		component:Test
 	}
 
 ]
