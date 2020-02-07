@@ -49,30 +49,40 @@
 		</div>
 		
 		<div class=" d-flex flex-wrap">
-			<v-card class="mx-auto hy-explore-card pos-rel" v-for="(discuss,index) in roundTable" :key="index" style="margin-bottom: 5%;">
-				<div style="background-color: red;" class="pos-rel" ref="mainBox">
-					<v-img class="white--text align-end" style="width: 50%;margin-left: 50%;" height="200px" :src="discuss.banner" ref="mainImg">
+			<v-card class="mx-auto hy-explore-card " v-for="(discuss,index) in roundTable" :key="index" style="margin-bottom: 5%;">
+				<div style="height: 60%;" class="pos-rel">
+					<div  class="pos-rel" ref="mainBox" style="height: 100%;">
+						<v-img class="white--text align-end" style="width: 50%;margin-left: 50%;" height="100%" :src="discuss.banner" ref="mainImg">
+							
+						</v-img>
+						<div style="width: 50%;height: 100%;top: 0; right: 0;" class="pos-abs" ref="mask"></div>
+						<div style="width: 50%;height: 100%;top: 0;right: 0;" class="pos-abs" ref="mask2"></div>
 						
-					</v-img>
-					<div style="width: 50%;height: 200px;top: 0; right: 0;" class="pos-abs" ref="mask"></div>
-					<div style="width: 50%;height: 200px;top: 0;right: 0;" class="pos-abs" ref="mask2"></div>
-					
-				</div>
-				<div class="pos-rel" style="top: -35%;">
-					<v-card-title class="font-weight-bold white--text">{{discuss.name}}</v-card-title>
-					<v-card-actions>
-						<v-card-subtitle class="pb-0 white--text">{{discuss.includeCount}}位嘉宾参与|{{discuss.visitsCount}}人关注</v-card-subtitle>
-						<v-spacer></v-spacer>
-						<v-btn color="blue  lighten-5" depressed>
-							<span class="font-weight-bold"  ref="btn">关注圆桌</span>
-						</v-btn>
-					</v-card-actions>
-					
+					</div>
+					<div class="pos-abs" style="bottom: 5%;">
+						<v-card-title class="font-weight-bold white--text">{{discuss.name}}</v-card-title>
+						<v-card-subtitle class="white--text">越是前景光明，越要居安思危。打败你的并不一定是你的敌人，而是自己的故步自封。</v-card-subtitle>
+						<v-card-actions>
+							<v-card-subtitle class="pb-2 white--text">{{discuss.includeCount}}位嘉宾参与|{{discuss.visitsCount}}人关注</v-card-subtitle>
+							<v-spacer></v-spacer>
+							<v-btn color="blue  lighten-5" depressed>
+								<span class="font-weight-bold"  ref="btn">关注圆桌</span>
+							</v-btn>
+						</v-card-actions>
+					</div>
 				</div>
 				
-				
-				
-				
+				<!-- <v-card-subtitle class="subtitle-1">可以推荐几个值得长期投资的基金吗？</v-card-subtitle>
+				<span class="ml-4">456个回答</span> -->
+				<div style="height: 40%;" class="p-3">
+					<span class="subtitle-1">为什么国内公司远程办公发展滞后？</span>
+					<br>
+					<p class="meta">123个回答</p>
+					<!-- <br> -->
+					<span class="subtitle-1">可以推荐几个值得长期投资的基金吗？</span>
+					<br>
+					<p  class="meta">123个回答</p>
+				</div>
 				
 			</v-card>
 			

@@ -3,7 +3,7 @@
 	<div class="hy-login-large">
 		<div class="hy-login-container">
 			<div class="img pos-abs">
-				<img src="../assets/image/知乎.png" alt="" style="background-color:#b8e5f8;">
+				<img src="../assets/logo.png" alt="" style="background-color:#b8e5f8;">
 			</div>
 			<div class="hy-login-content pos-abs">
 				<v-card class="mx-auto" height="380px">

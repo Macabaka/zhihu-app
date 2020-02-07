@@ -168,7 +168,7 @@
 					<span class="font-weight-light">版权服务中心</span>
 				</div>
 			</div>
-			<div class="hy-home-right-lastTips pos-sti">
+			<div class="hy-home-right-lastTips pos-sti pos-sti mt-1 font-14 p-1">
 				<span class="hy-home-right-text">刘看山 · 知乎指南 · 知乎协议 · 知乎隐私保护协议</span>
 				<br>
 				<span class="hy-home-right-text">应用·工作·申请开通知乎机构号</span>
@@ -198,34 +198,7 @@
 			</div>
 		</div>
 		
-		<div class="hy-main-toTop pos-fix">
-			<div class="my-2">
-				<v-tooltip left>
-					<template v-slot:activator="{ on }">
-						<v-btn color="#ffffff" fab small tile style="border-radius:12%;" v-on="on">
-							<svg class="Zi Zi--Feedback" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
-								<path d="M19.99 6.99L18 5s-1-1-2-1H8C7 4 6 5 6 5L4 7S3 8 3 9v9s0 2 2.002 2H19c2 0 2-2 2-2V9c0-1-1.01-2.01-1.01-2.01zM16.5 5.5L19 8H5l2.5-2.5h9zm-2 5.5s.5 0 .5.5-.5.5-.5.5h-5s-.5 0-.5-.5.5-.5.5-.5h5z"></path>
-							</svg>
-						</v-btn>
-					</template>
-					<span style="font-size: 12px;">建议反馈</span>
-				</v-tooltip>
-			</div>
 		
-			<div class="my-2" v-show="toTop">
-				<v-tooltip left>
-					<template v-slot:activator="{ on }">
-						<v-btn color="#ffffff" fab small tile style="border-radius:12%;" v-on="on" @click="goTop()">
-							<svg class="Zi Zi--BackToTop" color="#8590a6" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
-								<path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path>
-							</svg>
-						</v-btn>
-					</template>
-					<span style="font-size: 12px;">回到顶部</span>
-				</v-tooltip>
-			</div>
-		
-		</div>
 		
 	</div>
 </template>
@@ -234,32 +207,14 @@
 	export default{
 		data(){
 			return{
-				toTop: false
+				
 			}
 		},
 		mounted() {
-			window.addEventListener('scroll',this.scrollToTop);
+			
 		},
 		methods:{
-			scrollToTop(){
-				let scrollTop = window.pageYOffset || document.documentElement.scrollTop ||document.scrollTop;
-				this.scrollTop = scrollTop;
-				if(scrollTop >300){
-					this.toTop = true;
-				}else{
-					this.toTop = false;					
-				}
-			},
-			// 通过计时器实现返回顶层功能
-			goTop(){
-				let timer = setInterval(()=>{
-					let speed =Math.floor(-this.scrollTop /5);
-					document.documentElement.scrollTop = document.body.scrollTop =this.scrollTop+speed;
-					if(document.documentElement.scrollTop < 10){
-						clearInterval(timer);
-					}
-				},16)
-			}
+
 		}
 		
 	}
@@ -320,9 +275,5 @@
 	.hy-home-right-text {
 		line-height: 32px;
 		color: #9099b0;
-	}
-	.hy-main-toTop {
-		bottom: 20px;
-		right: 20px;
 	}
 </style>
